@@ -1,0 +1,25 @@
+ main {
+    margin-bottom: 120px;
+ }
+ section {
+    display: inline-block;
+    width: 240px;
+    background: #9a7e8b;
+    text-align: center;
+    color: #330000;
+    margin: 25px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+ }
+
+ h1 {
+    color: #660033;
+    font-style: italic;
+    font-size: 40px;
+    text-align: center;
+ }
+ footer {
+    text-align: right;
+ }
+
