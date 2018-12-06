@@ -1,0 +1,22 @@
+<!--<form>-->
+    <!--<label for="todo">Add new task:</label><br>-->
+    <!--<input type="text" name="todo" id="todo"><br>-->
+    <!--<label for="calendar">Add expiration date:</label><br>-->
+    <!--<input type="date" name="calendar"><br>-->
+    <!--<button>Apply</button>-->
+
+<!--</form>-->
+
+<form>
+    <div class="form-group row">
+        <div class="col-xs-4">
+            <input class="form-control" [(ngModel)]="text" placeholder = "Add new task" />
+        </div>
+        <div class="col-xs-2">
+                <input type="date" class="form-control" [(ngModel)]="date"  />
+        </div>
+        <div class="col-xs-2">
+                <button class="btn" (click)="addItem(text, date)">Add</button>
+        </div>
+    </div>
+</form>

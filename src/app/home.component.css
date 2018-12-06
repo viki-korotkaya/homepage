@@ -1,0 +1,13 @@
+.home {
+    text-align: center;
+}
+.home a {
+    display: inline-block;
+    width: 240px;
+    background: #9a7e8b;
+    text-align: center;
+    color: #330000;
+    margin: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+ }
