@@ -6,18 +6,19 @@
          'polyfills': './src/polyfills.ts',
          'app': './src/main.ts'
        },
-    output:{
+     devtool: 'eval-source-map',
+     output:{
         path: path.resolve(__dirname, './public'),
         publicPath: '/public/',
         filename: "[name].js"
-    },
-    devServer: {
+     },
+     devServer: {
        historyApiFallback: true,
-    },
-    resolve: {
-     extensions: ['.ts', '.js']
-   },
-    module:{
+     },
+     resolve: {
+        extensions: ['.ts', '.js']
+     },
+     module:{
         rules:[   //загрузчик для ts
             {
                 test: /\.ts$/, // определяем тип файлов

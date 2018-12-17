@@ -1,22 +1,37 @@
-<!--<form>-->
-    <!--<label for="todo">Add new task:</label><br>-->
-    <!--<input type="text" name="todo" id="todo"><br>-->
-    <!--<label for="calendar">Add expiration date:</label><br>-->
-    <!--<input type="date" name="calendar"><br>-->
-    <!--<button>Apply</button>-->
+<section class="todo_component">
 
-<!--</form>-->
-
-<form>
-    <div class="form-group row">
-        <div class="col-xs-4">
-            <input class="form-control" [(ngModel)]="text" placeholder = "Add new task" />
-        </div>
-        <div class="col-xs-2">
-                <input type="date" class="form-control" [(ngModel)]="date"  />
-        </div>
-        <div class="col-xs-2">
+    <form>
+        <div class="form-group row">
+            <div class="col-xs-4">
+                <input class="form-control"  name ="text" [(ngModel)]="text" placeholder = "Add new task" />
+            </div>
+            <div class="col-xs-2">
+                <input type="date" name ="date" class="form-control" [(ngModel)]="date"  />
+            </div>
+            <div class="col-xs-2">
                 <button class="btn" (click)="addItem(text, date)">Add</button>
+            </div>
         </div>
+    </form>
+
+    <div class="list-todo">
+        <h2>List of tasks</h2>
+        <ul class="list-group">
+            <li *ngFor="let item of todoArray" class="list-group-item" [ngClass]="{
+    'list-group-item-success':item.done === false,
+    'list-group-item-warning':item.done === true}" >
+                <button type="button" class="close" aria-label="Close" (click)="closeItem(item)">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <label class="checkbox-inline" >
+                    <input type="checkbox" name="done" [(ngModel)]="item.done">{{item?.text}}
+                </label>
+                <div>{{item?.date}}</div>
+
+            </li>
+        </ul>
     </div>
-</form>
+
+</section>
+
+
