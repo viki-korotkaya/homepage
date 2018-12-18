@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 class Item{
     text: string;
@@ -36,8 +36,10 @@ class Item{
     }
 
     ngOnInit(){
-
+    //const myHeaders = new HttpHeaders().set('Access-Control-Allow-Origin', '*');
+        this.http.get('http://localhost:8080/myapp/user/index').subscribe((data) => console.log(data));
     }
+
     addItem(text: string, date: string): void {
         if(text==null || date ==null) { return };
         this.todoArray.push(new Item(text, date));
