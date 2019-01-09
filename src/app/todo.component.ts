@@ -36,8 +36,11 @@ class Item{
     }
 
     ngOnInit(){
-    //const myHeaders = new HttpHeaders().set('Access-Control-Allow-Origin', '*');
-        this.http.get('http://localhost:8080/myapp/user/index').subscribe((data) => console.log(data));
+
+        //this.http.get('http://localhost:8080/myapp/user/index').subscribe((data) => console.log(data));
+        this.todoArray = JSON.parse(localStorage.getItem("todolist"));
+        console.log(this.todoArray);
+
     }
 
     addItem(text: string, date: string): void {
@@ -45,12 +48,18 @@ class Item{
         this.todoArray.push(new Item(text, date));
         this.text = undefined;
         this.date = undefined;
-
-
+        localStorage.setItem("todolist", JSON.stringify(this.todoArray));
     }
 
     closeItem(item: any){
         this.todoArray.splice(this.todoArray.indexOf(item), 1);
+        localStorage.setItem("todolist", JSON.stringify(this.todoArray));
     }
+
+    onFilterChange(ev: any){
+        localStorage.setItem("todolist", JSON.stringify(this.todoArray));
+    }
+
+
 
  }

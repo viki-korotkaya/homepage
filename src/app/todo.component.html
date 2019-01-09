@@ -24,7 +24,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <label class="checkbox-inline" >
-                    <input type="checkbox" name="done" [(ngModel)]="item.done">{{item?.text}}
+                    <input type="checkbox" name="done" [(ngModel)]="item.done" (change)="onFilterChange($event)">{{item?.text}}
                 </label>
                 <div>{{item?.date}}</div>
 

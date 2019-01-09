@@ -1,3 +1,17 @@
+<header>
+    <nav>
+        <a routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact:true}" routerLink="">Main</a>
+        <a routerLinkActive="active"
+           routerLink="/todo">Todo</a>
+        <a routerLinkActive="active"
+           routerLink="/expenses">Expenses</a>
+        <a routerLinkActive="active"
+           routerLink="/photo">Photo</a>
+        <a routerLinkActive="active"
+           routerLink="/calendar">Calendar</a>
+    </nav>
+</header>
 <main>
     <div><h1>Family business</h1></div>
     <router-outlet></router-outlet>
